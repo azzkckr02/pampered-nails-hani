@@ -1,20 +1,13 @@
 {
   "name": "Pampered Nails by Hani",
-  "version": 1.0,
+  "version": 2,
   "public": true,
-  "builds": [
+  "buildCommand": "",
+  "outputDirectory": ".",
+  "rewrites": [
     {
-      "src": "index.html",
-      "use": "@vercel/static"
+      "source": "/(.*)",
+      "destination": "/index.html"
     }
-  ],
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "/index.html"
-    }
-  ],
-  "env": {
-    "VERCEL_URL": "@vercel_url"
-  }
+  ]
 }
