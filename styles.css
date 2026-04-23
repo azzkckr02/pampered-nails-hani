@@ -70,44 +70,46 @@ body {
     border: none;
     cursor: pointer;
     transition: var(--transition);
-    border-radius: 8px;
+    border-radius: 10px;
     font-family: var(--font-sans);
+    box-shadow: 0 4px 12px rgba(245, 165, 165, 0.2);
 }
 
 .btn-primary {
-    background-color: var(--primary-color);
+    background: linear-gradient(135deg, var(--primary-color), #f08888);
     color: white;
-    border: 2px solid var(--primary-color);
+    border: 2px solid transparent;
 }
 
 .btn-primary:hover,
 .btn-primary:focus {
-    background-color: #f08888;
+    background: linear-gradient(135deg, #f08888, #e87777);
     border-color: #f08888;
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-md);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(245, 165, 165, 0.35);
 }
 
 .btn-primary:active {
-    transform: translateY(0);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(245, 165, 165, 0.2);
 }
 
 .btn-secondary {
-    background-color: transparent;
+    background-color: white;
     color: var(--primary-color);
     border: 2px solid var(--primary-color);
 }
 
 .btn-secondary:hover,
 .btn-secondary:focus {
-    background-color: var(--secondary-color);
-    border-color: var(--secondary-color);
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-md);
+    background: linear-gradient(135deg, rgba(245, 165, 165, 0.1), rgba(232, 197, 216, 0.15));
+    border-color: var(--primary-color);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(245, 165, 165, 0.2);
 }
 
 .btn-secondary:active {
-    transform: translateY(0);
+    transform: translateY(-1px);
 }
 
 .btn-lg {
@@ -136,26 +138,26 @@ body {
 
 .sticky-btn {
     position: fixed;
-    bottom: calc(var(--spacing-unit) * 3);
-    right: calc(var(--spacing-unit) * 2);
+    bottom: calc(var(--spacing-unit) * 2);
+    right: calc(var(--spacing-unit) * 1.5);
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: calc(var(--spacing-unit) * 1.5);
-    padding: calc(var(--spacing-unit) * 1.75) calc(var(--spacing-unit) * 3);
-    background-color: var(--primary-color);
+    gap: calc(var(--spacing-unit) * 1);
+    padding: calc(var(--spacing-unit) * 1.5) calc(var(--spacing-unit) * 2.5);
+    background: linear-gradient(135deg, var(--primary-color), #f08888);
     color: white;
     border: none;
     border-radius: 50px;
     font-weight: 600;
-    font-size: 1rem;
+    font-size: 0.95rem;
     cursor: pointer;
-    box-shadow: var(--shadow-lg);
+    box-shadow: 0 6px 20px rgba(245, 165, 165, 0.4);
     transition: var(--transition);
     z-index: 999;
     opacity: 0;
     visibility: hidden;
-    transform: translateY(20px);
+    transform: translateY(30px);
 }
 
 .sticky-btn.visible {
@@ -166,17 +168,17 @@ body {
 
 .sticky-btn:hover,
 .sticky-btn:focus {
-    background-color: #f08888;
-    transform: translateY(-3px);
-    box-shadow: 0 10px 32px rgba(245, 165, 165, 0.3);
+    background: linear-gradient(135deg, #f08888, #e87777);
+    transform: translateY(-4px);
+    box-shadow: 0 10px 28px rgba(245, 165, 165, 0.45);
 }
 
 .sticky-btn:active {
-    transform: translateY(0);
+    transform: translateY(-1px);
 }
 
 .btn-icon {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
 }
 
 .btn-text {
@@ -189,13 +191,13 @@ body {
 
 .hero {
     width: 100%;
-    min-height: 70vh;
+    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
     overflow: hidden;
-    background-color: #f5f5f5;
+    background: linear-gradient(135deg, #2c2c2c, #1a1a1a);
 }
 
 .hero-content {
@@ -211,13 +213,18 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center;
     display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    animation: zoomIn 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .hero-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(135deg, rgba(61, 61, 61, 0.5), rgba(245, 165, 165, 0.3));
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.35) 0%, rgba(245, 165, 165, 0.15) 100%);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -225,27 +232,33 @@ body {
     text-align: center;
     padding: calc(var(--spacing-unit) * 3);
     z-index: 2;
+    animation: fadeInUp 0.8s ease-out 0.3s both;
 }
 
 .hero-title {
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: 700;
     color: white;
-    margin-bottom: calc(var(--spacing-unit) * 2);
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
-    line-height: 1.3;
+    margin-bottom: calc(var(--spacing-unit) * 1.25);
+    text-shadow: 2px 2px 12px rgba(0, 0, 0, 0.5);
+    line-height: 1.1;
+    letter-spacing: -0.5px;
+    animation-delay: 0.5s;
 }
 
 .hero-subtitle {
-    font-size: 1.1rem;
-    color: rgba(255, 255, 255, 0.95);
-    margin-bottom: calc(var(--spacing-unit) * 4);
-    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
-    max-width: 600px;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.96);
+    margin-bottom: calc(var(--spacing-unit) * 2.5);
+    text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.4);
+    max-width: 320px;
+    line-height: 1.5;
+    animation-delay: 0.7s;
 }
 
 .hero .btn {
     z-index: 10;
+    padding: calc(var(--spacing-unit) * 2.25) calc(var(--spacing-unit) * 4);
 }
 
 /* ============================================
@@ -253,7 +266,7 @@ body {
    ============================================ */
 
 .gallery-section {
-    padding: calc(var(--spacing-unit) * 8) 0;
+    padding: calc(var(--spacing-unit) * 6) 0;
     background-color: var(--neutral-light);
 }
 
@@ -261,24 +274,24 @@ body {
     display: grid;
     grid-template-columns: 1fr;
     gap: calc(var(--spacing-unit) * 2);
-    margin-top: calc(var(--spacing-unit) * 4);
+    margin-top: calc(var(--spacing-unit) * 3);
 }
 
 .gallery-card {
     position: relative;
     width: 100%;
-    aspect-ratio: 1;
-    border-radius: 12px;
+    aspect-ratio: 3 / 3.5;
+    border-radius: 16px;
     overflow: hidden;
     cursor: pointer;
-    background-color: white;
-    box-shadow: var(--shadow-sm);
+    background-color: #f5f5f5;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
     transition: var(--transition);
 }
 
 .gallery-card:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-md);
+    transform: translateY(-6px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
 }
 
 .gallery-image {
@@ -290,13 +303,13 @@ body {
 }
 
 .gallery-card:hover .gallery-image {
-    transform: scale(1.05);
+    transform: scale(1.08);
 }
 
 .gallery-overlay {
     position: absolute;
     inset: 0;
-    background: rgba(245, 165, 165, 0.8);
+    background: rgba(245, 165, 165, 0.85);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -310,22 +323,22 @@ body {
 }
 
 .gallery-expand {
-    width: 48px;
-    height: 48px;
+    width: 52px;
+    height: 52px;
     border-radius: 50%;
     background-color: white;
     border: none;
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
     transition: var(--transition);
-    box-shadow: var(--shadow-md);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
 }
 
 .gallery-expand:hover {
-    transform: scale(1.1);
+    transform: scale(1.15);
     background-color: var(--neutral-light);
 }
 
@@ -334,14 +347,14 @@ body {
    ============================================ */
 
 .about-section {
-    padding: calc(var(--spacing-unit) * 8) 0;
+    padding: calc(var(--spacing-unit) * 6) 0;
     background-color: white;
 }
 
 .about-content {
     display: flex;
     flex-direction: column;
-    gap: calc(var(--spacing-unit) * 4);
+    gap: calc(var(--spacing-unit) * 3.5);
     align-items: center;
 }
 
@@ -350,19 +363,19 @@ body {
 }
 
 .about-description {
-    font-size: 1.05rem;
+    font-size: 1rem;
     color: var(--text-light);
     line-height: 1.8;
-    margin-bottom: calc(var(--spacing-unit) * 3);
+    margin-bottom: calc(var(--spacing-unit) * 2.5);
 }
 
 .profile-image {
     width: 100%;
-    max-width: 300px;
+    max-width: 280px;
     aspect-ratio: 1;
-    border-radius: 12px;
+    border-radius: 16px;
     object-fit: cover;
-    box-shadow: var(--shadow-md);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
 }
 
 /* ============================================
