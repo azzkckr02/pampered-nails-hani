@@ -5,7 +5,7 @@
 
 // Configuration
 const CONFIG = {
-    messengerPageId: 'YOUR_PAGE_ID', // User must update this with their Facebook Page ID
+    messengerPageId: 'https://m.me/61556642543798', // User must update this with their Facebook Page ID
     gallerySelectorDelay: 500, // Delay before initializing gallery in ms
 };
 
