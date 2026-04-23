@@ -5,7 +5,7 @@
 
 // Configuration
 const CONFIG = {
-    messengerPageId: 'https://www.messenger.com/t/61556642543798', // User must update this with their Facebook Page ID
+    messengerPageId: '61556642543798', // User must update this with their Facebook Page ID
     gallerySelectorDelay: 500, // Delay before initializing gallery in ms
 };
 
@@ -39,6 +39,7 @@ function initStickyButton() {
         rootMargin: '0px',
         threshold: 0.5,
     };
+
 
     const observer = new IntersectionObserver(function(entries) {
         entries.forEach(entry => {
